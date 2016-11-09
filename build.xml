@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="gbk" ?>
+
+
+<project name="Main" default="run" basedir=".">
+
+  
+   <property name="src" value="src"/>
+   <property name="dest" value="build"/>
+   <property name="Main_jar" value="Main.jar"/>
+
+ 
+   <target name="init">
+   <mkdir dir="${dest}"/>
+   </target>
+
+
+ 
+   <target name="compile" depends="init">
+   <javac srcdir="${src}" destdir="${dest}"/>
+   </target>
+
+  
+   <target name="build" depends="compile">
+   <jar jarfile="${Main_jar}" basedir="${dest}"/>
+   </target>
+
+ 
+   <target name="run" depends="build">   
+   <java classname="Main" classpath="${Main_jar}"/>
+   </target>
+    
+
+    <target name="clean">  
+        <delete dir="${dest}" />  
+        <delete file="${Main_jar}"/>  
+    </target>  
+  
+    <target name="rerun" depends="clean,run">  
+        <ant target="clean" />  
+        <ant target="run" />  
+    </target>  
+
+</project>
