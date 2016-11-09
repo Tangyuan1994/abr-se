@@ -1,0 +1,9 @@
+Question 5
+Votre implantation de la classe ABR permet-elle de créer un objet Java de type ABR qui ne respecte pas les contraintes d’un Arbre Binaire de Recherche ?
+
+Oui.
+
+
+
+Si oui, dans la branche master, créer un test mettant en évidence ce défaut.
+Synchroniser votre copie avec le serveur github à la fin de cette question.
